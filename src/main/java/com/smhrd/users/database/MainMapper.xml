@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.users.model.CartDAO">
+
+
+	<!-- 장바구니 담기 -->
+	<insert id="CartListInsert" parameterType="com.smhrd.users.model.CartDTO">
+		INSERT INTO CARTS(USER_ID, PROD_ID) 
+        VALUES (#{user_id} , #{prod_id})
+	</insert>
+	
+
+	<!-- 장바구니에 담긴 상품 정보 가져오기 -->
+	<select id="getCartItems" parameterType="com.smhrd.users.model.CartDTO" resultType="com.smhrd.users.model.CartDTO">
+        SELECT A.PROD_NAME,A.PROD_PRICE, A.PROD_GRADE, B.*, C.*
+		FROM PRODUCTS A, CARTS B, PROD_UPLOAD_IMAGES C
+		WHERE A.PROD_ID =  B.PROD_ID
+        AND C.FILE_MAIN = 'Y'
+        AND B.PROD_ID =  C.PROD_ID
+        AND B.USER_ID = #{user_id}
+	</select>
+	
+	<!-- 장바구니에 담긴 상품 개수 카운트-->
+	<select id="selectCartCount" parameterType="com.smhrd.users.model.CartDTO" resultType="int">
+		SELECT COUNT(*)
+        FROM (
+	        SELECT A.PROD_NAME,A.PROD_PRICE, A.PROD_GRADE, B.*, C.*
+			FROM PRODUCTS A, CARTS B, PROD_UPLOAD_IMAGES C
+			WHERE A.PROD_ID =  B.PROD_ID
+	        AND C.FILE_MAIN = 'Y'
+	        AND B.PROD_ID =  C.PROD_ID
+	        AND B.USER_ID = #{user_id}
+        )
+	</select>
+
+	<!-- 현재 장바구니에 담겨있는 전체 상품의 가격의 합 가져오기 -->
+	<select id="getTotalPrice" parameterType="com.smhrd.users.model.CartDTO" resultType="int">
+		SELECT COALESCE(SUM(P.PROD_PRICE), 0)
+		FROM CARTS C
+		JOIN PRODUCTS P ON C.PROD_ID = P.PROD_ID
+		WHERE C.USER_ID = #{user_id}
+	</select>
+
+	<!-- 장바구니에서 상품 삭제 -->
+	<delete id="removeFromCart" parameterType="com.smhrd.users.model.CartDTO">
+		DELETE FROM CARTS
+		WHERE USER_ID = #{user_id} AND PROD_ID = #{prod_id}
+	</delete>
+
+</mapper>

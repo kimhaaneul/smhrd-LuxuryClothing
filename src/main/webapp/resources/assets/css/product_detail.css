@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+    font-size: 13pt;
+}
+
+h1{
+	text-align: left;
+}
+
+.product-image img {
+    width: 480px;
+    height: 480px;
+    margin-top: -80px;
+}
+
+.product-info div {
+    text-align: left;
+}
+
+.product-info span {
+    display: inline-block;
+    text-align: left;
+}
+
+
+.product-info .info-group {
+    margin-bottom: 10px;
+}
+
+
+.product-details {
+    width: 600px;
+    margin-top: 20px;
+}
+
+.grade-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 600px;
+}
+
+.grade-cell {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 8pt;
+    margin-bottom: 20px;
+}
+
+/* 수정된 CSS 코드 */
+button[id="buyNow"] {
+    width: 300px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 5px;
+     background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    
+}
+
+
+button[id="buyNow"]:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(0, 0, 0); /* 검정색 테두리선 추가 */
+    border-radius: 5px;
+    
+}
+
+/* 추가된 CSS 코드 */
+button[class="cartPickList"]{
+    width: 130px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+     border: 1px solid rgb(0, 0, 0);
+     border-radius: 5px;
+}
+
+button[class="cartPickList"]:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+     border: 1px solid rgb(0, 0, 0);
+     border-radius: 5px;
+     
+}
+
+.box {
+    width: 600px;
+    height: 130px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    text-align: left;
+    font-size: 8pt;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+/* 알파벳들끼리 정렬 맞춤 */
+.box span {
+    display: inline-block;
+    width: calc(100% - 5px);
+    margin-right: 5px;
+}
+
+/* 한글끼리 정렬 맞춤 */
+.box strong {
+    display: inline-block;
+    width: 100%;
+}
+
+/* ======= 테이블 css ======*/
+table {
+            width: 600px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+           
+            text-align: left;
+        }
+
+        th {
+            width: 200px;
+        }
+
+        td {
+            width: 400px;
+        }
+
+        th:first-child,
+        td:first-child {
+            border-left: none;
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: none;
+        }
+
+        th {
+            font-weight: bold;
+        }

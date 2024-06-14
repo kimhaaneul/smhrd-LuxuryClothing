@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* 공통 스타일 */
+body {
+    text-align: center;
+}
+
+hr {
+    width: 1000px;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+table {
+    width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+th:first-child,
+td:first-child {
+    border-left: none;
+    color: gray;
+}
+
+th:last-child,
+td:last-child {
+    border-left: none;
+    border-right: none;
+}
+
+/* 헤더 영역 */
+.header-area {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* 푸터 영역 */
+.footer-area {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* 추가적인 스타일링 */
+.ctable {
+    margin-top: 30px; /* 테이블과 헤더 사이의 간격 설정 */
+}
+
+.cbutton {
+    position: absolute; /* 절대 위치로 변경 */
+    left: 50%; /* 페이지의 중앙에 위치하도록 왼쪽 여백 설정 */
+    transform: translateX(-50%); /* 가운데 정렬 */
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center; /* 중앙 정렬로 변경 */
+}
+
+.wkwn {
+    margin-top: 20px; /* "자주묻는 질문" 헤더의 위쪽 여백 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}

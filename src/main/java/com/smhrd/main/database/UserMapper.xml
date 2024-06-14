@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper namespace란? mapper 파일이 여러개일때, 해당하는 파일을 식별할 수 있는 식별자 이름을 정해줄때, 
+	해당 mapper파일과 연결이 되는 DAO 쿨래스 이름을 일치 시켜주는 것을 원칙으로 함 -->
+
+<mapper namespace="com.smhrd.main.model.UserDAO">
+	<!-- mapper 태그 안쪽에 SQL 구문을 기술 -->
+
+	<!-- id : DAO에서 sqlSession을 사용해 Mapper파일 안쪽에 있는 SQL구분을 맞아줄때 사용 값 중복 허용 안함 
+		resultType 동작원리 : 나만의 자료형으로 resultType을 명시해놓았다면 : 1. 기본 생성자를 호출해서 객체를 생성(mybatis가 
+		알아서) : 2. 조회한 테이블의 컬러명과 일치하는 필드가 있는지 확인 : 3. 해당 필드의 setter 메소드를 호출해서 값을 채우는 
+		구조 * setter 메소드가 없거나, 기본생성자가 없어져버린경우 문제가 발생하기도 한다 ! 알아두면 좋은 팁! : resultType 
+		에는 java 기본으로 존재하는 자료형은 굳이 명시하지 않아도 된다 ! -->
+	<insert id="join" parameterType="com.smhrd.main.model.UserDTO">
+		INSERT INTO USERS(user_id,
+		user_pw, user_phone, user_name, user_email, user_addr)
+		VALUES(#{user_id}, #{user_pw}, #{user_phone}, #{user_name},
+		#{user_email}, #{user_addr})
+	</insert>
+
+	<!-- 로그인 기능! -->
+	<select id="login" parameterType="com.smhrd.main.model.UserDTO"
+		resultType="com.smhrd.main.model.UserDTO">
+		SELECT USER_ID, USER_PHONE, USER_NAME, USER_EMAIL,
+		USER_ADDR, USER_GRADE,
+		JOINED_AT
+		FROM USERS
+		WHERE USER_ID = #{user_id}
+		AND USER_PW = #{user_pw}
+	</select>
+
+
+	<!-- 회원 탈퇴를 위한 쿼리 -->
+	<delete id="JoinOut"
+		parameterType="com.smhrd.main.model.UserDTO">
+		DELETE FROM USERS
+		WHERE USER_ID = #{user_id} AND USER_PW
+		= #{user_pw}
+	</delete>
+
+	<!-- 회원정보변경창 들어가기 위한 비밀번호 일치 확인 -->
+	<select id="userModifyEnter"
+		parameterType="com.smhrd.main.model.UserDTO"
+		resultType="com.smhrd.main.model.UserDTO">
+		SELECT USER_ID
+		FROM USERS
+		WHERE USER_ID = #{user_id} AND
+		USER_PW = #{user_pw}
+	</select>
+
+	<update id="update" parameterType="com.smhrd.main.model.UserDTO">
+		UPDATE USERS SET USER_PHONE=#{user_phone}, USER_NAME=#{user_name},
+		USER_EMAIL=#{user_email}, USER_ADDR=#{user_addr}
+		WHERE
+		USER_ID=#{user_id}
+		<!-- 중괄호 안에는 필드명 그대로 바로 적자. -->
+	</update>
+
+	<!-- 비밀번호 변경 -->
+	<update id="changePassword" parameterType="com.smhrd.main.model.UserDTO">
+		UPDATE USERS
+		SET USER_PW = #{user_pw}
+		WHERE USER_ID = #{user_id}
+	</update>
+</mapper>

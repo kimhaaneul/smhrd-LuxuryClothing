@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper namespace란? mapper 파일이 여러개일때, 해당하는 파일을 식별할 수 있는 식별자 이름을 정해줄때, 
+   해당 mapper파일과 연결이 되는 DAO 쿨래스 이름을 일치 시켜주는 것을 원칙으로 함 -->
+
+<mapper namespace="com.smhrd.purchases.model.PurchasesDAO">
+   <!-- mapper 태그 안쪽에 SQL 구문을 기술 -->
+
+	<insert id="purchaseRecord" parameterType="com.smhrd.purchases.model.PurchasesDTO">
+		INSERT INTO PURCHASES(USER_ID, TOTAL_AMOUNT,PAY_METHOD, PAID_AMOUNT, PROD_ID, DELI_ADDR, RECIPIENT_NAME, RECIPIENT_PHONE, DELI_MESSAGE, ORDER_STATUS)
+      	VALUES(#{user_id}, #{total_amount},#{pay_method}, #{paid_amount}, #{prod_id}, #{deli_addr}, #{recipient_name}, #{recipient_phone}, #{deli_message}, #{order_status})	
+	</insert>
+	
+	<select id="getRecord" parameterType="com.smhrd.main.model.UserDTO" resultType="com.smhrd.purchases.model.PurchasesRecordDTO">
+		SELECT A.*, B.PROD_NAME, C.FILE_NAME
+		FROM PURCHASES A, PRODUCTS B, PROD_UPLOAD_IMAGES C
+		WHERE C.FILE_MAIN = 'Y'
+		AND A.PROD_ID =  B.PROD_ID
+		AND B.PROD_ID =  C.PROD_ID
+		AND A.USER_ID = #{user_id}
+	</select>
+	
+	<update id="setNo" parameterType="com.smhrd.purchases.model.PurchasesDTO">
+		UPDATE PRODUCTS SET PROD_YN= 'N' 
+		WHERE PROD_ID =#{prod_id}
+	</update>
+	
+	<select id="payEndDto" parameterType="com.smhrd.purchases.model.PurchasesRecordDTO" resultType="com.smhrd.purchases.model.PurchasesRecordDTO">
+		SELECT A.*, B.PROD_NAME
+		FROM PURCHASES A, PRODUCTS B
+		WHERE A.PROD_ID = B.PROD_ID
+		AND A.PROD_ID = #{prod_id}
+	</select>
+	
+</mapper>

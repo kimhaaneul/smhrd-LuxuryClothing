@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>maven</groupId>
+  <artifactId>LuxuryClothing</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+    <!-- jstl 라이브러리, ojdbc6, mybatis 3.5.9 버전 가지고 오기-->
+  
+  <dependencies>
+<!-- 
+	<dependency>
+	   <groupId>org.sonatype.aether</groupId>
+	   <artifactId>aether-api</artifactId>
+	   <version>1.7</version>
+    </dependency>
+-->
+	<!-- jstl 라이브러리 -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+
+	<!-- ojdbc6 -->
+	<dependency>
+	    <groupId>com.oracle.database.jdbc</groupId>
+	    <artifactId>ojdbc6</artifactId>
+	    <version>11.2.0.4</version>
+	</dependency>
+
+	<!-- mybatis -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.5.9</version>
+	</dependency>
+	
+	<!-- lombok -->
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.30</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- 메일전송 관련 메이븐 STR-->
+	<dependency>
+       <groupId>javax.servlet</groupId>
+       <artifactId>javax.servlet-api</artifactId>
+       <version>4.0.1</version>
+       <scope>provided</scope>
+   </dependency>
+   <dependency>
+        <groupId>javax.mail</groupId>
+        <artifactId>javax.mail-api</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.mail</groupId>
+        <artifactId>javax.mail</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+	<!-- 메일전송 관련 메이븐 END-->
+	
+	<!-- 이미지 업로드 관련 메이븐 STR-->
+	<!-- https://mvnrepository.com/artifact/servlets.com/cos -->
+	<dependency>
+	    <groupId>servlets.com</groupId>
+	    <artifactId>cos</artifactId>
+	    <version>05Nov2002</version>
+	</dependency>
+	<!-- 이미지 업로드 관련 메이븐 END-->
+	
+	<dependency>
+	 	<groupId>org.zeroturnaround</groupId>
+	    <artifactId>zt-exec</artifactId>
+	    <version>1.12</version>
+	</dependency>
+
+<!-- 
+	<dependency>
+		<groupId>com.smhrd</groupId>
+		<artifactId>MassegeSystem</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+-->
+  	
+	  	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20231013</version>
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>

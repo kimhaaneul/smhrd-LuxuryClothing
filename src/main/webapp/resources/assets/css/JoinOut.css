@@ -1,0 +1,74 @@
+@charset "UTF-8";
+body {
+    
+    font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+  }
+  .withdrawal-container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 1000px;
+  }
+  hr {
+    width: 1000px;
+    border: 1px solid #000;
+  }
+  .withdrawal-message {
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  .notice {
+    margin: 20px 0;
+  }
+  #passwordInput {
+    padding: 8px;
+  }
+  #agreeCheckbox {
+    margin-right: 5px;
+  }
+  #withdrawalButton, #goBackButton {
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+/* 버튼 스타일링 */
+button {
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 가운데 정렬 스타일링 */
+.button-container {
+    text-align: center;
+}
+
+p {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+table {
+    width: 1000px;
+    height: 100px;
+    border-collapse: collapse;
+    /* 테두리 중복 제거 */
+    margin: 20px auto;
+    /* 중앙 정렬을 위한 외부 여백 */
+}
+
+/* 셀 스타일링 */
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px; /* 폰트 크기 설정 */
+}
+
+/* 표 헤더 스타일링 */
+th {
+    background-color: #f2f2f2;
+}

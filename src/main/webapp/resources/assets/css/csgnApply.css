@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.content_box{
+  margin-top: 82px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: 'Montserrat',"Noto Sans KR",Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;
+  color: var(--f-color);
+  text-align: center; /* 모든 내용을 가운데 정렬 */
+  font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+}
+/* li.scroll-to-section{
+  margin-left: 70px;
+} */
+li.submenu{
+    position: relative;
+    left: 200px;
+}
+
+li.submenu2{
+  position: relative;
+  left: 200px;
+}
+.service_tit {
+  text-align: center;
+  font-size: larger;
+  margin: 0;
+  padding: 40px 5px 0; /* 위, 좌우, 아래 패딩 추가 */
+}
+
+
+
+.service_cont {
+  line-height: 22px;
+  color: #555;
+  text-align: center; /* 가운데 정렬 */
+}
+
+.bannercocoService2{
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 50px; /* 좌우 가운데 정렬 */
+  line-height: 24px;
+  border-top: 2px solid #f3f3f3;
+  background-color: #f3f3f3;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 45px 30px; /* 위, 좌우 패딩 */
+  box-sizing: border-box;
+}
+
+.bannercocoService2 span {
+  font-size: 20px;
+  display: block;
+  color: #000;
+  line-height: 26px;
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+
+.cocoService {
+  width: 90%;
+  margin: 0 auto; /* 좌우 가운데 정렬 */
+}
+
+.cocoService .checkSame {
+  margin: 15px auto -15px; /* 위, 아래 가운데 정렬 */
+  position: relative;
+  right: 26%;
+}
+
+.cocoService h1.title {
+  font-size: 19px;
+  color: #333;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  position: relative;
+  right: 26%;
+  font-weight: bold;
+}
+
+.cocoService table {
+  width: 60%;
+  border-top: 1px solid #999;
+  margin: 20px auto 50px; /* 상하 가운데 정렬 */
+}
+
+.cocoService table th {
+  background: #fafafa;
+  text-align: right;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #333;
+  font-weight: normal;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.cocoService table td{
+  border-bottom: 1px solid #dbdbdb;
+  padding: 2%;
+  text-align: left; /* 가운데 정렬 */
+}
+td input[type="text"], td input[type="password"], td input[type="tel"], td input[type="email"] {
+  width: 200px;
+  margin: 10px auto; /* 상하 가운데 정렬 */
+}
+
+
+
+table {
+  margin: 0 auto; /* 테이블 가운데 정렬 */
+  display: table;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+
+colgroup {
+  display: table-column-group;
+}
+
+/* ================= 하늘 추가*/
+
+button[type="submit"] {
+    width: 150px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 5px;
+     background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    
+}
+
+
+button[type="submit"]:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid rgb(0, 0, 0); /* 검정색 테두리선 추가 */
+    border-radius: 5px;
+    
+}
+
+textarea[name="goods_detail"]{
+	font-weight: 11px;
+}
+

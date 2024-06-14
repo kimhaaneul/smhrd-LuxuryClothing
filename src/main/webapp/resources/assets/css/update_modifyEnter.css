@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.container {
+    text-align: center;
+    margin: auto;
+    max-width: 950px;
+    padding: 20px;
+}
+
+h1 {
+    color: black;
+}
+
+.top_manu {
+    color: black !important; /* 링크의 색상을 검정색으로 설정 */
+    text-decoration: none !important; /* 링크의 밑줄 제거 */
+    font-weight: bold !important; /* 글꼴 굵기 설정 */
+    display: inline-block !important;
+    margin-left: 50px !important; /* 좌우 간격을 10px로 설정 */
+    margin-right: 50px !important; /* 좌우 간격을 10px로 설정 */
+}
+
+.top_manu a:first-child {
+    margin-left: 0 !important;
+}
+
+.top_manu a:last-child {
+    margin-right: 0 !important;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+.hr-divider {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+

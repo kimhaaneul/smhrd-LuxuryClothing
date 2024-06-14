@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.admin.model.AdminDAO">
+
+	<!-- 관리자 로그인 -->
+	<select id="adminlogin"	parameterType="com.smhrd.admin.model.AdminDTO"	resultType="com.smhrd.admin.model.AdminDTO">
+		SELECT USER_ID
+		FROM USERS
+		WHERE USER_ID = #{user_id}
+		AND USER_PW = #{user_pw}
+	</select>
+
+	<!-- 관리자 회원 전체 조회 -->
+	<select id="selectAll"	resultType="com.smhrd.admin.model.AdminDTO">
+		SELECT USER_ID
+			, USER_PHONE
+			, USER_NAME
+			, USER_EMAIL
+			, USER_ADDR
+			, USER_GRADE
+			, JOINED_AT 
+		FROM USERS
+	</select>
+
+	<!-- 관리자 회원 조회 -->
+	<select id="searchUserById" parameterType="com.smhrd.admin.model.AdminDTO" resultType="com.smhrd.admin.model.AdminDTO">
+	    SELECT USER_ID
+	    	, USER_PW
+	    	, USER_PHONE
+	    	, USER_NAME
+	    	, USER_EMAIL
+	    	, USER_ADDR
+	    	, USER_GRADE
+	    	, JOINED_AT
+	    FROM USERS
+	    WHERE USER_ID = #{userId}
+	</select>
+
+</mapper>

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 20px 0;
+    
+}
+
+.menu-container {
+        display: flex;
+    justify-content: space-around;
+}
+
+.menu-container a {
+    text-decoration: none;
+    color: #333;
+}
+
+.button-container {
+    margin-top: 10px;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.button-container button {
+    background-color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.button-container button:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.dateBox {
+    border: 1px solid #ccc;
+    display: inline-block;
+    height: 30px;
+    width: 170px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.dateBox input[type="date"] {
+    height: 100%;
+    width: 70%;
+    border: none;
+    outline: none;
+    float: left;
+    padding: 0 5px;
+}
+
+.dateBox button {
+    height: 100%;
+    width: 30%;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    float: left;
+
+}
+
+p {
+    font-weight: bold;
+    text-align: left;
+    font-size: 18px;
+}
+/* 여기서부터 아래 주문 내역 */
+.table-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table tr {
+    border-bottom: 1px solid #000;
+}
+
+table td {
+    border: none;
+    padding: 10px;
+    text-align: center; /* 가운데 정렬 추가 */
+}
+
+
+table td img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.goods_price{
+	text-align: center;
+}
